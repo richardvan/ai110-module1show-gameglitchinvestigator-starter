@@ -43,8 +43,8 @@ if "status" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-if "game_id" not in st.session_state:    #FIX: bug for New Game functionality via CC
-    st.session_state.game_id = 0         #     (history not cleared, Enter your guess field, game state)
+if "game_id" not in st.session_state:  #FIX: needed to reset text input field on New Game
+    st.session_state.game_id = 0
 
 st.subheader("Make a guess")
 
@@ -60,9 +60,9 @@ with st.expander("Developer Debug Info"):
     st.write("Difficulty:", difficulty)
     st.write("History:", st.session_state.history)
 
-_guess_key = f"guess_input_{difficulty}_{st.session_state.game_id}"      #FIX: bug with Submit Button race condition
-                                                                         #     fixed with multiple agent prompts
-def _capture_guess():
+_guess_key = f"guess_input_{difficulty}_{st.session_state.game_id}"  #FIX: key includes game_id so field resets on New Game
+
+def _capture_guess():  #FIX: captures input value before rerun clears it, fixes Submit race condition with Debug expander open
     st.session_state.pending_guess = st.session_state.get(_guess_key, "")
 
 raw_guess = st.text_input("Enter your guess:", key=_guess_key)
@@ -75,8 +75,8 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
-if new_game:                                             # FIX: several fixes here, one of them being number of attempts
-    st.session_state.attempts = 0                        #      was off by one, history not cleared, game state
+if new_game:  #FIX: history not cleared, secret used wrong range, game state not reset, text field not cleared
+    st.session_state.attempts = 0
     st.session_state.secret = random.randint(low, high)
     st.session_state.history = []
     st.session_state.status = "playing"
