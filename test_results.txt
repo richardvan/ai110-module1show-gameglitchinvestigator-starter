@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /Users/richardvan/codepath_learning/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python3.13
+cachedir: .pytest_cache
+rootdir: /Users/richardvan/codepath_learning/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collecting ... collected 24 items
+
+tests/test_game_logic.py::test_winning_guess PASSED                      [  4%]
+tests/test_game_logic.py::test_guess_too_high PASSED                     [  8%]
+tests/test_game_logic.py::test_guess_too_low PASSED                      [ 12%]
+tests/test_game_logic.py::test_guess_by_one_high PASSED                  [ 16%]
+tests/test_game_logic.py::test_guess_by_one_low PASSED                   [ 20%]
+tests/test_game_logic.py::test_string_guess_equal_to_secret PASSED       [ 25%]
+tests/test_game_logic.py::test_guess_below_range_easy PASSED             [ 29%]
+tests/test_game_logic.py::test_guess_above_range_easy PASSED             [ 33%]
+tests/test_game_logic.py::test_guess_above_range_normal PASSED           [ 37%]
+tests/test_game_logic.py::test_guess_above_range_hard PASSED             [ 41%]
+tests/test_game_logic.py::test_non_numeric_input_returns_error_message PASSED [ 45%]
+tests/test_game_logic.py::test_letters_do_not_count_as_attempt PASSED    [ 50%]
+tests/test_game_logic.py::test_out_of_range_low_does_not_count_as_attempt PASSED [ 54%]
+tests/test_game_logic.py::test_out_of_range_high_does_not_count_as_attempt PASSED [ 58%]
+tests/test_game_logic.py::test_valid_guess_counts_as_attempt PASSED      [ 62%]
+tests/test_game_logic.py::test_update_score_win_normal PASSED            [ 66%]
+tests/test_game_logic.py::test_update_score_win_points_capped PASSED     [ 70%]
+tests/test_game_logic.py::test_update_score_too_high_even_attempt PASSED [ 75%]
+tests/test_game_logic.py::test_update_score_too_high_odd_attempt PASSED  [ 79%]
+tests/test_game_logic.py::test_update_score_too_low PASSED               [ 83%]
+tests/test_game_logic.py::test_update_score_unknown_outcome PASSED       [ 87%]
+tests/test_game_logic.py::test_range_easy PASSED                         [ 91%]
+tests/test_game_logic.py::test_range_normal PASSED                       [ 95%]
+tests/test_game_logic.py::test_range_hard PASSED                         [100%]
+
+============================== 24 passed in 0.01s ==============================
