@@ -22,7 +22,9 @@ Document at least 3 bugs you found. Add rows as needed.
 | Click "New Game"| the game should reset, history should clear, should clear the "Enter your guess:" area | the history stays, no numbers | none |
 | Entered a guess that is higher than the Secret| should get a response to go Lower | tells me to Go Higher! | none |
 | Hard difficulty| the Range should be wider than Normal difficulty| the range is less than Normal difficulty | none |
-| Easy difficulty| the Attempts allowed should be higher than Normal difficulty | the Attempts allowed is less than Normal difficulty
+| Easy difficulty| the Attempts allowed should be higher than Normal difficulty | the Attempts allowed is less than Normal difficulty |
+| Hint showed "1 and 100" on Easy difficulty | Hint should show the difficulty's actual range (e.g. 1 and 20 for Easy) | Hint always showed hardcoded "1 and 100" regardless of difficulty | none |
+| Switch from Normal to Easy difficulty mid-session | Secret should be within Easy range (1–20) | Secret retained from Normal session (e.g. 91), outside Easy range | none |
 ---
 
 ## 2. How did you use AI as a teammate?
