@@ -92,11 +92,11 @@ if st.session_state.status != "playing":
     st.stop()
 
 if submit:
-    pending = st.session_state.pop("pending_guess", raw_guess)
+    pending = st.session_state.pop("pending_guess", raw_guess)  #FIX: use captured value to avoid race condition loss
     ok, guess_int, err = parse_guess(pending, low=low, high=high)
 
-    if not ok:                                    #FIX: bad input should not count as an attempt via agent
-        st.error(err) 
+    if not ok:
+        st.error(err)
     else:
         st.session_state.attempts += 1
         st.session_state.history.append(guess_int)
