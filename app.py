@@ -49,7 +49,8 @@ if "game_id" not in st.session_state:  #FIX: needed to reset text input field on
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    #FIX: hardcoded 1 and 100 should use difficulty-based range from get_range_for_difficulty
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
